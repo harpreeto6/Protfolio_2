@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Design System - Modern Tech Aesthetic */
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --background: 222 22% 6%;
+    --foreground: 210 40% 98%;
+    
+    /* Tech Brand Colors */
+    --primary: 258 90% 66%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 285 100% 80%;
+    
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --accent: 0 79% 63%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Surface Colors */
+    --card: 222 22% 8%;
+    --card-foreground: 210 40% 98%;
+    --card-hover: 222 22% 12%;
+    
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    
+    /* Interactive */
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 258 90% 66%;
+    
+    /* System */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --popover: 222 22% 8%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--card-hover)));
+    --gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    
+    /* Effects */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --radius: 0.75rem;
+
+    /* Tech Skills Colors */
+    --skill-java: 25 95% 53%;
+    --skill-cpp: 212 100% 48%;
+    --skill-ai: 280 100% 70%;
+    --skill-web: 142 76% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--accent) / 0.1) 0%, transparent 50%);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer components {
+  /* Hero text gradient */
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Card with gradient background */
+  .gradient-card {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
