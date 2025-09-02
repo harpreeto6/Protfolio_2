@@ -46,7 +46,7 @@ const Projects = () => {
       description: "Designed and implemented a multi-level shooter game with AI-driven enemy spawns and dynamic physics using Unreal Engine and C++. Features custom animations and immersive gameplay mechanics.",
       technologies: ["C++", "Unreal Engine", "Blueprints", "Xcode"],
       period: "February 2024 – April 2024",
-      type: "Academic Project",
+      type: "Personal Project",
       highlights: [
         "AI-driven enemy behavior system",
         "Dynamic physics implementation",
