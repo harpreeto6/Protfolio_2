@@ -170,9 +170,16 @@ const Contact = () => {
               Let's build something amazing together!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg">
-                Download My Resume
-              </Button>
+              <a
+                href="/Harpreet_Singh_Resume.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="hero" size="lg">
+                  Download My Resume
+                </Button>
+              </a>
               <Button variant="outline" size="lg">
                 Schedule a Call
               </Button>
