@@ -64,10 +64,17 @@ const Hero = () => {
               <Github className="mr-2 group-hover:rotate-12 transition-transform" size={20} />
               View My Work
             </Button>
-            <Button variant="glass" size="lg" className="group">
-              <Download className="mr-2 group-hover:translate-y-1 transition-transform" size={20} />
-              Download Resume
-            </Button>
+            <a
+              href="/Harpreet_Singh_Resume.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="glass" size="lg" className="group">
+                <Download className="mr-2 group-hover:translate-y-1 transition-transform" size={20} />
+                Download Resume
+              </Button>
+            </a>
           </div>
 
           {/* Social Links */}
