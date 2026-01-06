@@ -4,6 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 
+const GITHUB_URL = "https://github.com";
+const LINKEDIN_URL = "https://linkedin.com/in/harpreet-singh-4523661a0";
+
 const Contact = () => {
   const contactInfo = [
     {
@@ -30,13 +33,13 @@ const Contact = () => {
     {
       icon: <Github className="w-6 h-6" />,
       label: "GitHub",
-      href: "https://github.com",
+      href: GITHUB_URL,
       color: "hover:text-primary"
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: LINKEDIN_URL,
       color: "hover:text-primary"
     }
   ];
@@ -55,20 +58,20 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-8 text-center">
             <div>
               <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Whether you're looking for a dedicated Computer Engineering student 
-                for an internship, have a project idea you'd like to discuss, or 
+                Whether you're looking for a dedicated Computer Engineering student
+                for an internship, have a project idea you'd like to discuss, or
                 just want to connect with a fellow developer, I'd love to hear from you.
               </p>
             </div>
 
             {/* Contact Info Cards */}
-            <div className="space-y-4">
+            <div className="space-y-4 max-w-xl mx-auto text-left">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="gradient-card p-6">
                   <div className="flex items-center">
@@ -96,7 +99,7 @@ const Contact = () => {
             {/* Social Links */}
             <div>
               <h4 className="text-lg font-semibold mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 justify-center">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
@@ -114,51 +117,52 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Send a Message (disabled for now)
           <Card className="gradient-card p-8">
             <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-2">Name</label>
-                  <Input 
+                  <Input
                     placeholder="Your name"
                     className="bg-background/50 border-border/50 focus:border-primary"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Email</label>
-                  <Input 
+                  <Input
                     type="email"
                     placeholder="your.email@example.com"
                     className="bg-background/50 border-border/50 focus:border-primary"
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium mb-2">Subject</label>
-                <Input 
+                <Input
                   placeholder="What's this about?"
                   className="bg-background/50 border-border/50 focus:border-primary"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium mb-2">Message</label>
-                <Textarea 
+                <Textarea
                   placeholder="Tell me about your project or opportunity..."
                   rows={6}
                   className="bg-background/50 border-border/50 focus:border-primary resize-none"
                 />
               </div>
-              
+
               <Button variant="hero" size="lg" className="w-full group">
                 <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
                 Send Message
               </Button>
             </form>
           </Card>
+          */}
         </div>
 
         {/* Call to Action */}
@@ -180,9 +184,7 @@ const Contact = () => {
                   Download My Resume
                 </Button>
               </a>
-              <Button variant="outline" size="lg">
-                Schedule a Call
-              </Button>
+              {/* <Button variant="outline" size="lg">Schedule a Call</Button> */}
             </div>
           </div>
         </div>

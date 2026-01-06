@@ -1,5 +1,8 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
+const GITHUB_URL = "https://github.com";
+const LINKEDIN_URL = "https://linkedin.com/in/harpreet-singh-4523661a0";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -20,7 +23,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6">
             <a
-              href="https://github.com"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform duration-300"
@@ -28,7 +31,7 @@ const Footer = () => {
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform duration-300"

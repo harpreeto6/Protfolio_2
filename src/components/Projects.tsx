@@ -3,18 +3,41 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, Calendar } from "lucide-react";
 
+const GITHUB_URL = "https://github.com";
+
 const Projects = () => {
   const projects = [
     {
+      title: "Sensum",
+      description: "A focused wellbeing + productivity app that helps you become more intentional about time online by pairing gentle browser nudges with quick 2–10 minute offline quests (Calm, Fitness, Study, Music, Friends, Outdoors). Built as a monorepo with a web app, backend API, and a Manifest V3 browser extension.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Java",
+        "Spring Boot",
+        "PostgreSQL",
+        "JWT (HttpOnly)",
+        "MV3 Extension",
+      ],
+      period: "Personal Project",
+      type: "Personal Project",
+      highlights: [
+        "Monorepo architecture: Next.js web app + Spring Boot API + MV3 browser extension",
+        "Secure auth with BCrypt password hashing and an HttpOnly JWT cookie",
+        "Quest loop with recommendations, XP/levels, and streak tracking (plus telemetry batching from the extension)",
+      ],
+    },
+    {
       title: "Fitness Tracker",
-      description: "A comprehensive fitness and calorie tracking application built with Java and JSwing. Features user-friendly navigation, data persistence using JSON serialization, and follows Test-Driven Development principles.",
-      technologies: ["Java", "JSwing", "JSON", "TDD"],
+      description: "A Java Swing desktop app for tracking daily nutrition. Users can add/remove foods, track calories consumed vs. calories burned, and review previous days. Data is persisted to JSON with save/load support.",
+      technologies: ["Java", "Swing", "JSON Persistence", "OOP"],
       period: "September 2024 – December 2024",
       type: "Academic Project",
       highlights: [
-        "Minimal navigation design for enhanced user experience",
-        "Open-source accessibility features",
-        "Robust functionality with comprehensive testing"
+        "Built a full desktop GUI workflow (add/remove foods, daily totals, history view)",
+        "Implemented JSON save/load so users can persist and restore tracker records",
+        "Added an event logging system to record key user actions for debugging and traceability"
       ]
     },
     {
@@ -41,18 +64,7 @@ const Projects = () => {
         "Rapid prototyping with AI tools"
       ]
     },
-    {
-      title: "Third-Person Shooter Game",
-      description: "Designed and implemented a multi-level shooter game with AI-driven enemy spawns and dynamic physics using Unreal Engine and C++. Features custom animations and immersive gameplay mechanics.",
-      technologies: ["C++", "Unreal Engine", "Blueprints", "Xcode"],
-      period: "February 2024 – April 2024",
-      type: "Personal Project",
-      highlights: [
-        "AI-driven enemy behavior system",
-        "Dynamic physics implementation",
-        "Custom animations and visual effects"
-      ]
-    }
+    
   ];
 
   const getTypeColor = (type: string) => {
@@ -130,9 +142,11 @@ const Projects = () => {
 
               {/* Action Buttons */}
               <div className="flex gap-3">
-                <Button variant="outline" size="sm" className="flex-1">
-                  <Github className="w-4 h-4 mr-2" />
-                  Code
+                <Button asChild variant="outline" size="sm" className="flex-1">
+                  <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    Code
+                  </a>
                 </Button>
                 <Button variant="ghost" size="sm" className="flex-1">
                   <ExternalLink className="w-4 h-4 mr-2" />
@@ -148,9 +162,11 @@ const Projects = () => {
           <p className="text-muted-foreground mb-6">
             Want to see more of my work?
           </p>
-          <Button variant="hero" size="lg">
-            <Github className="w-5 h-5 mr-2" />
-            View All Projects on GitHub
+          <Button asChild variant="hero" size="lg">
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+              <Github className="w-5 h-5 mr-2" />
+              View All Projects on GitHub
+            </a>
           </Button>
         </div>
       </div>

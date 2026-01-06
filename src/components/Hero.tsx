@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
+const GITHUB_URL = "https://github.com";
+const LINKEDIN_URL = "https://linkedin.com/in/harpreet-singh-4523661a0";
+
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -60,9 +63,11 @@ const Hero = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: '0.6s' }}>
-            <Button variant="hero" size="lg" className="group">
-              <Github className="mr-2 group-hover:rotate-12 transition-transform" size={20} />
-              View My Work
+            <Button asChild variant="hero" size="lg" className="group">
+              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                <Github className="mr-2 group-hover:rotate-12 transition-transform" size={20} />
+                View My Work
+              </a>
             </Button>
             <a
               href="/Harpreet_Singh_Resume.pdf"
@@ -80,7 +85,7 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mt-8 animate-fade-in" style={{ animationDelay: '0.8s' }}>
             <a
-              href="https://github.com"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
@@ -88,7 +93,7 @@ const Hero = () => {
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
