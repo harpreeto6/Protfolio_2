@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harpreet Singh Resume</title>
+  <style>
+    :root {
+      --text: #111;
+      --muted: #444;
+      --rule: #ddd;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--text);
+      font: 14px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 32px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 28px;
+      line-height: 1.1;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+    .headline { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+    .contact { text-align: right; font-size: 13px; color: var(--muted); }
+    .contact div { margin: 2px 0; }
+    .contact .links { white-space: nowrap; }
+
+    h2 {
+      font-size: 13px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin: 18px 0 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* Avoid a “double rule” right under the header */
+    .page > header + section h2 {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 14px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: baseline;
+    }
+
+    .title { font-weight: 700; }
+    .meta { color: var(--muted); }
+    .where { color: var(--muted); }
+
+    ul {
+      margin: 6px 0 0 18px;
+      padding: 0;
+    }
+    li { margin: 3px 0; }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 13px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 16px;
+    }
+
+    .small { font-size: 13px; color: var(--muted); }
+
+    @media print {
+      body { font-size: 12px; }
+      .page { padding: 0; }
+      a { text-decoration: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div>
+        <h1>Harpreet Singh</h1>
+        <p class="headline">Computer Engineering Student • Software Developer</p>
+      </div>
+      <div class="contact">
+        <div><a href="mailto:hs3732065@gmail.com">hs3732065@gmail.com</a></div>
+        <div><a href="tel:+17789981236">+1 (778) 998-1236</a></div>
+        <div>Vancouver, BC, Canada</div>
+        <div class="links">
+          <a href="https://linkedin.com/in/harpreet-singh-4523661a0">linkedin.com/in/harpreet-singh-4523661a0</a>
+          &nbsp;|&nbsp;
+          <a href="https://github.com/harpreeto6">github.com/harpreeto6</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Education</h2>
+
+      <div>
+        <div class="row">
+          <div class="title">University of British Columbia (UBC)</div>
+          <div class="meta">Sept 2024 to Dec 2027 (expected)</div>
+        </div>
+        <div class="small">BASc, Computer Engineering (Vancouver, BC)</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+
+      <div>
+        <div class="row">
+          <div class="title">Sensum: Wellbeing + Productivity App (Monorepo)</div>
+          <div class="meta">Personal Project</div>
+        </div>
+        <div class="chips">Next.js • TypeScript • Tailwind • Java 17 • Spring Boot • PostgreSQL • MV3 Browser Extension • JWT (HttpOnly)</div>
+        <ul>
+          <li>Built a 3-part monorepo (Next.js web app + Spring Boot API + MV3 browser extension) to deliver wellbeing nudges and offline “quests” (2 to 10 minutes, 6 categories).</li>
+          <li>Implemented secure auth with BCrypt password hashing and an HttpOnly JWT cookie; designed REST APIs (16+ endpoints) backed by PostgreSQL.</li>
+          <li>Designed the core loop: recommend 3 quests, complete/skip/snooze actions, XP/leveling, and daily streak tracking; extension batches telemetry events for efficient ingestion.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="row" style="margin-top: 10px;">
+          <div class="title">Fitness Tracker: Desktop Nutrition Tracker</div>
+          <div class="meta">Java • Swing • JSON</div>
+        </div>
+        <ul>
+          <li>Built a Java Swing app to add/remove foods, track calories consumed vs. calories burned, and review daily totals.</li>
+          <li>Implemented JSON persistence (save/load) to restore tracker records across sessions.</li>
+          <li>Added event logging to record key user actions for debugging and traceability.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="row" style="margin-top: 10px;">
+          <div class="title">Canvas Assistant: AI Chatbot</div>
+          <div class="meta">Hackathon</div>
+        </div>
+        <div class="chips">Node.js • Google Dialogflow • Canvas API</div>
+        <ul>
+          <li>Built a student-support chatbot prototype using Dialogflow; integrated with Canvas-style data flows for real-time responses.</li>
+          <li>Focused on rapid iteration, integration points, and user-friendly conversational UX under hackathon time constraints.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="row" style="margin-top: 10px;">
+          <div class="title">Data Science: Player Engagement Analysis</div>
+          <div class="meta">Academic</div>
+        </div>
+        <div class="chips">R • Statistical Modeling • KNN • Regression</div>
+        <ul>
+          <li>Analyzed engagement patterns and built predictive models to support capacity/resource planning decisions.</li>
+          <li>Applied KNN and regression approaches and summarized findings through exploratory analysis.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div>
+        <div class="row">
+          <div class="title">Math Tutor (Self-Employed)</div>
+          <div class="meta">Jan 2025 to Aug 2025</div>
+        </div>
+        <div class="where">Surrey, BC</div>
+        <ul>
+          <li>Tutored high school students in Algebra, Geometry, and Pre-Calculus with adaptive explanations and practice plans.</li>
+          <li>Strengthened communication by explaining complex topics clearly and tracking progress over time.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="row" style="margin-top: 10px;">
+          <div class="title">Customer Service Associate (Save-On-Foods)</div>
+          <div class="meta">Mar 2022 to Dec 2023</div>
+        </div>
+        <div class="where">New Westminster, BC</div>
+        <ul>
+          <li>Improved inventory accuracy through systematic reporting and stock tracking.</li>
+          <li>Reduced restocking time by ~20 to 25% through layout and process improvements.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="small">
+        <div class="skills-grid">
+          <div><span class="title">Languages:</span> Java, TypeScript, JavaScript, SQL, C++, R</div>
+          <div><span class="title">Backend:</span> Spring Boot, REST APIs, Auth (JWT), PostgreSQL</div>
+          <div><span class="title">Frontend:</span> React / Next.js, Tailwind CSS</div>
+          <div><span class="title">Tools:</span> Git/GitHub, VS Code</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

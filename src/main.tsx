@@ -7,8 +7,7 @@ createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />
     <a
-      href="/Harpreet_Singh_Resume.pdf"
-      download
+      href="/Harpreet_Singh_Resume.html"
       target="_blank"
       rel="noopener noreferrer"
     >
