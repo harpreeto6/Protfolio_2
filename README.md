@@ -111,8 +111,14 @@ npm run deploy
 
 Note: `predeploy` copies `dist/index.html` to `dist/404.html` to support refreshing deep links on GitHub Pages.
 
-## Resume PDF
+## Resume
 
-The resume download links point to `/Harpreet_Singh_Resume.pdf`.
-Place that file in [public](public) so it is served from the site root.
+The site currently links to `/Harpreet_Singh_Resume.html`.
+
+- Files live in [public](public):
+   - `Harpreet_Singh_Resume.html` (recommended source of truth)
+   - `Harpreet_Singh_Resume.md` (text version)
+   - `Harpreet_Singh_Resume.pdf` (optional)
+
+If you want a PDF with the exact same formatting as the HTML, open the HTML in a browser and use **Print → Save as PDF**.
 
