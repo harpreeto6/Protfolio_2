@@ -15,7 +15,8 @@ Next.js • TypeScript • Tailwind • Java 17 • Spring Boot • PostgreSQL �
 - Implemented secure auth with BCrypt password hashing and an HttpOnly JWT cookie; designed REST APIs (16+ endpoints) backed by PostgreSQL.
 - Designed the core loop: recommend 3 quests, complete/skip/snooze actions, XP/leveling, and daily streak tracking; extension batches telemetry events for efficient ingestion.
 
-**Fitness Tracker: Desktop Nutrition Tracker** (Java • Swing • JSON)
+**Fitness Tracker: Desktop Nutrition Tracker** (Personal Project)  
+Java • Swing • JSON
 - Built a Java Swing app to add/remove foods, track calories consumed vs. calories burned, and review daily totals.
 - Implemented JSON persistence (save/load) to restore tracker records across sessions.
 - Added event logging to record key user actions for debugging and traceability.
