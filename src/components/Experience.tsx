@@ -8,7 +8,7 @@ const Experience = () => {
       title: "Math Tutor",
       company: "Self-Employed",
       location: "Surrey, B.C.",
-      period: "Jan 2025 – August 2025",
+      period: "Jan 2025 – Jan 2026",
       type: "Education",
       description: "Providing personalized mathematics tutoring to high school students, focusing on building confidence and understanding in complex mathematical concepts.",
       achievements: [

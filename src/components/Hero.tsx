@@ -4,6 +4,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const GITHUB_URL = "https://github.com";
 const LINKEDIN_URL = "https://linkedin.com/in/harpreet-singh-4523661a0";
+const RESUME_URL = `${import.meta.env.BASE_URL}Harpreet_Singh_Resume.html`;
 
 const Hero = () => {
   return (
@@ -70,7 +71,7 @@ const Hero = () => {
               </a>
             </Button>
             <a
-              href="/Harpreet_Singh_Resume.html"
+              href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
             >

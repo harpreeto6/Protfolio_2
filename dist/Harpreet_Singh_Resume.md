@@ -15,29 +15,30 @@ Next.js • TypeScript • Tailwind • Java 17 • Spring Boot • PostgreSQL �
 - Implemented secure auth with BCrypt password hashing and an HttpOnly JWT cookie; designed REST APIs (16+ endpoints) backed by PostgreSQL.
 - Designed the core loop: recommend 3 quests, complete/skip/snooze actions, XP/leveling, and daily streak tracking; extension batches telemetry events for efficient ingestion.
 
-**Fitness Tracker: Desktop Nutrition Tracker** (Java • Swing • JSON)
+**Fitness Tracker: Desktop Nutrition Tracker** (Personal Project)  
+Java • Swing • JSON
 - Built a Java Swing app to add/remove foods, track calories consumed vs. calories burned, and review daily totals.
 - Implemented JSON persistence (save/load) to restore tracker records across sessions.
 - Added event logging to record key user actions for debugging and traceability.
 
-**Canvas Assistant — AI Chatbot** (Hackathon)  
+**Canvas Assistant: AI Chatbot** (Hackathon)  
 Node.js • Google Dialogflow • Canvas API
 - Built a student-support chatbot prototype using Dialogflow; integrated with Canvas-style data flows for real-time responses.
 - Focused on rapid iteration, integration points, and user-friendly conversational UX under hackathon time constraints.
 
-**Data Science — Player Engagement Analysis** (Academic)  
+**Data Science: Player Engagement Analysis** (Academic)  
 R • Statistical Modeling • KNN • Regression
 - Analyzed engagement patterns and built predictive models to support capacity/resource planning decisions.
 - Applied KNN and regression approaches and summarized findings through exploratory analysis.
 
 ## Experience
-**Math Tutor (Self-Employed)** (Jan 2025 to Aug 2025) — Surrey, BC
+**Math Tutor (Self-Employed)** (Jan 2025 to Aug 2025) (Surrey, BC)
 - Tutored students in Algebra, Geometry, and Pre-Calculus with adaptive explanations and practice plans.
 - Strengthened communication by explaining complex topics clearly and tracking progress over time.
 
-**Customer Service Associate (Save-On-Foods)** (Mar 2022 to Dec 2023) — New Westminster, BC
+**Customer Service Associate (Save-On-Foods)** (Mar 2022 to Dec 2023) (New Westminster, BC)
 - Improved inventory accuracy through systematic reporting and stock tracking.
-- Reduced restocking time by ~20–25% through layout and process improvements.
+- Reduced restocking time by ~20 to 25% through layout and process improvements.
 
 ## Skills
 - Languages: Java, TypeScript, JavaScript, SQL, C++, R

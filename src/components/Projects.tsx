@@ -32,8 +32,8 @@ const Projects = () => {
       title: "Fitness Tracker",
       description: "A Java Swing desktop app for tracking daily nutrition. Users can add/remove foods, track calories consumed vs. calories burned, and review previous days. Data is persisted to JSON with save/load support.",
       technologies: ["Java", "Swing", "JSON Persistence", "OOP"],
-      period: "September 2024 – December 2024",
-      type: "Academic Project",
+      period: "Personal Project",
+      type: "Personal Project",
       highlights: [
         "Built a full desktop GUI workflow (add/remove foods, daily totals, history view)",
         "Implemented JSON save/load so users can persist and restore tracker records",
