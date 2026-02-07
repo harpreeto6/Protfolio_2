@@ -32,13 +32,16 @@ R • Statistical Modeling • KNN • Regression
 - Applied KNN and regression approaches and summarized findings through exploratory analysis.
 
 ## Experience
-**Math Tutor (Self-Employed)** (Jan 2025 to Aug 2025) (Surrey, BC)
+**Frontend Developer (MOps) (UBC ORBIT Satellite Design Team)** (Jan 2026 to Present) (Vancouver, BC)
+- Building operator-facing tooling and dashboards using React / Next.js.
+- Working with team APIs and end-to-end (E2E) testing to improve reliability and catch regressions.
+
+**Math Tutor (Self-Employed)** (Jan 2025 to Jan 2026) (Surrey, BC)
 - Tutored students in Algebra, Geometry, and Pre-Calculus with adaptive explanations and practice plans.
 - Strengthened communication by explaining complex topics clearly and tracking progress over time.
 
 **Customer Service Associate (Save-On-Foods)** (Mar 2022 to Dec 2023) (New Westminster, BC)
-- Improved inventory accuracy through systematic reporting and stock tracking.
-- Reduced restocking time by ~20 to 25% through layout and process improvements.
+- Collected customer feedback and reported trends to management to improve service and store operations.
 
 ## Skills
 - Languages: Java, TypeScript, JavaScript, SQL, C++, R
