@@ -5,10 +5,24 @@ import { Briefcase, Calendar, MapPin, TrendingUp } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "Frontend Developer (MOps)",
+      company: "UBC ORBIT Satellite Design Team",
+      location: "Vancouver, B.C.",
+      period: "Jan 2026 – Present",
+      type: "Engineering",
+      description: "Building operator-facing tooling and dashboards for mission operations, with a focus on reliability and clear system feedback.",
+      achievements: [
+        "Developing UI features using React / Next.js",
+        "Working with team APIs for data-driven interfaces and live updates",
+        "Using end-to-end (E2E) testing to catch regressions and improve reliability",
+        "Collaborating with subteams to translate mission needs into usable workflows"
+      ]
+    },
+    {
       title: "Math Tutor",
       company: "Self-Employed",
       location: "Surrey, B.C.",
-      period: "Jan 2025 – Jan 2026",
+      period: "Jan 2025 – Present",
       type: "Education",
       description: "Providing personalized mathematics tutoring to high school students, focusing on building confidence and understanding in complex mathematical concepts.",
       achievements: [

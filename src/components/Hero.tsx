@@ -4,7 +4,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const GITHUB_URL = "https://github.com";
 const LINKEDIN_URL = "https://linkedin.com/in/harpreet-singh-4523661a0";
-const RESUME_URL = `${import.meta.env.BASE_URL}Harpreet_Singh_Resume.html`;
+const RESUME_PDF_URL = `${import.meta.env.BASE_URL}Harpreet_Singh_Resume.pdf`;
 
 const Hero = () => {
   return (
@@ -71,9 +71,8 @@ const Hero = () => {
               </a>
             </Button>
             <a
-              href={RESUME_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={RESUME_PDF_URL}
+              download="Harpreet_Singh_Resume.pdf"
             >
               <Button variant="glass" size="lg" className="group">
                 <Download className="mr-2 group-hover:translate-y-1 transition-transform" size={20} />
