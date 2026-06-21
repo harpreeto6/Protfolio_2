@@ -68,8 +68,7 @@ const caseStudies = [
     eyebrow: "Full-stack product",
     lens: "software",
     mapsTo: "Maps to backend, product engineering, auth, APIs, and user-facing systems.",
-    diagram: "screenshot",
-    image: "/assets/sensum/today.png",
+    diagram: "sensum",
     summary:
       "A wellbeing and productivity platform that pairs browser nudges with offline micro-quests, progress loops, social features, and telemetry.",
     proof: [
@@ -171,6 +170,31 @@ const lensIcons = {
 };
 
 const diagrams = {
+  sensum: {
+    title: "Product system loop",
+    icon: Sparkles,
+    accent: "#20bca5",
+    lanes: ["User experience", "Backend feedback loop"],
+    nodes: [
+      { x: 42, y: 96, w: 190, h: 76, label: "Next.js app", sub: "quests / stats / friends" },
+      { x: 285, y: 96, w: 200, h: 76, label: "Chrome extension", sub: "nudges + focus events" },
+      { x: 538, y: 96, w: 190, h: 76, label: "User actions", sub: "complete / skip / snooze" },
+      { x: 52, y: 292, w: 205, h: 76, label: "Spring Boot API", sub: "auth + domain routes" },
+      { x: 308, y: 292, w: 185, h: 76, label: "PostgreSQL", sub: "users / quests / events" },
+      { x: 545, y: 292, w: 180, h: 76, label: "Stats engine", sub: "XP / streaks / levels" },
+      { x: 255, y: 424, w: 255, h: 76, label: ["Recommendation", "loop"], sub: "explainable next quest" },
+    ],
+    edges: [
+      [0, 2],
+      [1, 2],
+      [2, 3],
+      [3, 4],
+      [4, 5],
+      [5, 6],
+      [6, 0],
+      [6, 1],
+    ],
+  },
   rag: {
     title: "Retrieval pipeline",
     icon: Search,
