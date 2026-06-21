@@ -182,7 +182,7 @@ const diagrams = {
       { x: 52, y: 292, w: 205, h: 76, label: "Spring Boot API", sub: "auth + domain routes" },
       { x: 308, y: 292, w: 185, h: 76, label: "PostgreSQL", sub: "users / quests / events" },
       { x: 545, y: 292, w: 180, h: 76, label: "Stats engine", sub: "XP / streaks / levels" },
-      { x: 255, y: 424, w: 255, h: 76, label: ["Recommendation", "loop"], sub: "explainable next quest" },
+      { x: 255, y: 424, w: 255, h: 92, label: ["Recommendation", "loop"], sub: "explainable next quest" },
     ],
     edges: [
       [0, 2],
@@ -477,16 +477,31 @@ function SignalBar() {
   return (
     <section className="signal-bar" aria-label="Career highlights">
       <div>
-        <strong>Amazon</strong>
-        <span>SDE Intern - 2026</span>
+        <span className="experience-icon amazon" aria-hidden="true">
+          <PackageCheck size={22} />
+        </span>
+        <div className="signal-copy">
+          <strong>Amazon</strong>
+          <span>SDE Intern - 2026</span>
+        </div>
       </div>
       <div>
-        <strong>UBC ORBIT</strong>
-        <span>Mission operations software</span>
+        <span className="experience-icon orbit-team" aria-hidden="true">
+          <Satellite size={22} />
+        </span>
+        <div className="signal-copy">
+          <strong>UBC ORBIT</strong>
+          <span>Mission operations software</span>
+        </div>
       </div>
       <div>
-        <strong>UBC BASc</strong>
-        <span>Computer Engineering - 2027</span>
+        <span className="experience-icon ubc" aria-hidden="true">
+          <GraduationCap size={22} />
+        </span>
+        <div className="signal-copy">
+          <strong>UBC BASc</strong>
+          <span>Computer Engineering - 2027</span>
+        </div>
       </div>
     </section>
   );

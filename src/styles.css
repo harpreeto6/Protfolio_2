@@ -460,23 +460,31 @@ h2 {
   background: rgba(255, 253, 248, 0.55);
 }
 
-.signal-bar div {
+.signal-bar > div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
   min-height: 96px;
   padding: 18px;
   border-right: 1px solid var(--line);
 }
 
-.signal-bar strong,
-.signal-bar span {
+.signal-copy {
+  display: grid;
+  gap: 2px;
+}
+
+.signal-copy strong,
+.signal-copy span {
   display: block;
 }
 
-.signal-bar strong {
+.signal-copy strong {
   margin-bottom: 7px;
   font-size: 1rem;
 }
 
-.signal-bar span {
+.signal-copy span {
   color: var(--muted);
   line-height: 1.45;
 }
