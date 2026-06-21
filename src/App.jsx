@@ -277,7 +277,7 @@ const diagrams = {
       { x: 522, y: 100, w: 205, h: 78, label: "Register file", sub: "read / write" },
       { x: 140, y: 292, w: 185, h: 78, label: "ALU", sub: "execute" },
       { x: 385, y: 292, w: 205, h: 78, label: "Data memory", sub: "load / store" },
-      { x: 72, y: 424, w: 235, h: 78, label: ["Memory-mapped", "I/O"], sub: "address decode" },
+      { x: 72, y: 424, w: 235, h: 92, label: ["Memory-mapped", "I/O"], sub: "address decode" },
       { x: 405, y: 424, w: 245, h: 78, label: "DE10-Lite I/O", sub: "LED / 7-seg / switches" },
     ],
     edges: [
@@ -298,18 +298,51 @@ function ArchitectureDiagram({ type }) {
   const toLines = (value) => (Array.isArray(value) ? value : [value]);
 
   const nodeByIndex = (index) => diagram.nodes[index];
+  const rectIntersection = (node, targetX, targetY) => {
+    const cx = node.x + node.w / 2;
+    const cy = node.y + node.h / 2;
+    const dx = targetX - cx;
+    const dy = targetY - cy;
+
+    // If centers coincide, return center to avoid division issues.
+    if (dx === 0 && dy === 0) {
+      return { x: cx, y: cy };
+    }
+
+    const halfW = node.w / 2;
+    const halfH = node.h / 2;
+    const scale = 1 / Math.max(Math.abs(dx) / halfW, Math.abs(dy) / halfH);
+
+    return {
+      x: cx + dx * scale,
+      y: cy + dy * scale,
+    };
+  };
+
   const edgePath = ([fromIndex, toIndex]) => {
     const from = nodeByIndex(fromIndex);
     const to = nodeByIndex(toIndex);
-    const x1 = from.x + from.w;
-    const y1 = from.y + from.h / 2;
-    const x2 = to.x;
-    const y2 = to.y + to.h / 2;
-    const midX = (x1 + x2) / 2;
-    if (Math.abs(y1 - y2) < 20 && x2 > x1) {
-      return `M ${x1} ${y1} L ${x2 - 12} ${y2}`;
+    const fromCenterX = from.x + from.w / 2;
+    const fromCenterY = from.y + from.h / 2;
+    const toCenterX = to.x + to.w / 2;
+    const toCenterY = to.y + to.h / 2;
+
+    const start = rectIntersection(from, toCenterX, toCenterY);
+    const end = rectIntersection(to, fromCenterX, fromCenterY);
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
+
+    if (Math.abs(dx) < 18 || Math.abs(dy) < 18) {
+      return `M ${start.x} ${start.y} L ${end.x} ${end.y}`;
     }
-    return `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2 - 12} ${y2}`;
+
+    if (Math.abs(dx) >= Math.abs(dy)) {
+      const midX = (start.x + end.x) / 2;
+      return `M ${start.x} ${start.y} C ${midX} ${start.y}, ${midX} ${end.y}, ${end.x} ${end.y}`;
+    }
+
+    const midY = (start.y + end.y) / 2;
+    return `M ${start.x} ${start.y} C ${start.x} ${midY}, ${end.x} ${midY}, ${end.x} ${end.y}`;
   };
   const renderTextLines = (lines, className, x, y, lineHeight) =>
     toLines(lines).map((line, lineIndex) => (
