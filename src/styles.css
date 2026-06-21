@@ -455,7 +455,7 @@ h2 {
 
 .signal-bar {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border-block: 1px solid var(--line);
   background: rgba(255, 253, 248, 0.55);
 }
@@ -644,18 +644,18 @@ h2 {
   fill: none;
   stroke: #251d17;
   stroke-linecap: round;
-  stroke-width: 3;
-  opacity: 0.48;
+  stroke-width: 2.6;
+  opacity: 0.34;
 }
 
 .diagram-node-svg rect {
-  fill: rgba(255, 253, 248, 0.96);
+  fill: #fffdf8;
   stroke: #251d17;
   stroke-width: 2.2;
 }
 
 .diagram-node-svg:nth-of-type(odd) rect {
-  fill: color-mix(in srgb, var(--diagram-accent) 10%, #fffdf8);
+  fill: #f7fffb;
 }
 
 .diagram-node-index {
@@ -666,13 +666,13 @@ h2 {
 
 .diagram-node-label {
   fill: #251d17;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 900;
 }
 
 .diagram-node-sub {
-  fill: #6f6257;
-  font-size: 13px;
+  fill: #5c5048;
+  font-size: 12.5px;
   font-weight: 800;
 }
 

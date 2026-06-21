@@ -67,10 +67,10 @@ const caseStudies = [
     title: "Sensum",
     eyebrow: "Full-stack product",
     lens: "software",
-    mapsTo: "Maps to backend, product engineering, auth, APIs, and user-facing systems.",
+    mapsTo: "Shows full-stack product engineering: auth, APIs, browser extension, and feedback loops.",
     diagram: "sensum",
     summary:
-      "A wellbeing and productivity platform that pairs browser nudges with offline micro-quests, progress loops, social features, and telemetry.",
+      "A wellbeing and productivity app with browser nudges, offline quests, social loops, and progress tracking.",
     proof: [
       "Built a monorepo with Spring Boot, PostgreSQL, Next.js, and a Chrome MV3 extension.",
       "Implemented BCrypt password hashing, HttpOnly JWT auth, quests, events, stats, friends, buddy sessions, and settings APIs.",
@@ -83,10 +83,10 @@ const caseStudies = [
     title: "RAG Retrieval Pipeline",
     eyebrow: "AI systems",
     lens: "ai",
-    mapsTo: "Maps to AI engineering, semantic retrieval, evaluation, and grounded answer systems.",
+    mapsTo: "Shows AI engineering: chunking, embeddings, retrieval, evaluation, and grounded answers.",
     diagram: "rag",
     summary:
-      "A local retrieval pipeline for computer-systems question answering over textbook PDFs, with extraction, cleaning, chunking, indexing, retrieval, and evaluation.",
+      "A local RAG pipeline for answering computer-systems questions from textbook PDFs with traceable evidence.",
     proof: [
       "Chunked 8 source documents into 11,890 MiniLM-ready chunks.",
       "Built a normalized 384-dimensional FAISS inner-product index with source/page metadata.",
@@ -99,10 +99,10 @@ const caseStudies = [
     title: "QuestBoard",
     eyebrow: "Agents + cloud",
     lens: "software",
-    mapsTo: "Maps to agent workflows, service boundaries, Docker, and deployable backend architecture.",
+    mapsTo: "Shows backend architecture: REST/MCP boundaries, Docker workflows, and AWS deployment planning.",
     diagram: "questboard",
     summary:
-      "A quest-generation service that connects a Spring Boot orchestrator to a TypeScript MCP server, with Dockerized local workflows and AWS CDK infrastructure.",
+      "A quest-generation service connecting a Spring Boot API to a TypeScript MCP tool server.",
     proof: [
       "Built REST/MCP service boundaries around goal, mood, and available-time inputs.",
       "Prepared AWS CDK infrastructure with VPC, ECS/Fargate, service discovery, load balancing, and CloudWatch logs.",
@@ -115,10 +115,10 @@ const caseStudies = [
     title: "AI Course Advisor",
     eyebrow: "Team project",
     lens: "ai",
-    mapsTo: "Maps to backend validation, AI-assisted document Q&A, citations, and team delivery.",
+    mapsTo: "Shows team backend work: validation, auth, document Q&A, citations, and regression checks.",
     diagram: "advisor",
     summary:
-      "A UBC course assistant that answers questions from uploaded syllabi and course documents with citations to source material.",
+      "A UBC course assistant that answers questions from uploaded syllabi and documents with citations.",
     proof: [
       "Contributed backend testing, functional validation, bug resolution, and team documentation.",
       "System used Spring Boot, React/Vite, PostgreSQL via Supabase, Supabase Auth, and Gemini.",
@@ -131,10 +131,10 @@ const caseStudies = [
     title: "FPGA + RISC-V Labs",
     eyebrow: "Systems depth",
     lens: "systems",
-    mapsTo: "Maps to computer engineering fundamentals: datapaths, I/O, FSMs, and hardware-aware debugging.",
+    mapsTo: "Shows computer engineering fundamentals: datapaths, memory-mapped I/O, FSMs, and debugging.",
     diagram: "fpga",
     summary:
-      "A collection of computer engineering projects covering processor datapaths, memory-mapped I/O, finite-state machines, and debounced input interfaces.",
+      "Computer engineering labs covering processor datapaths, memory-mapped I/O, FSMs, and input interfaces.",
     proof: [
       "Implemented a RISC-V style single-cycle processor with instruction/data memories, controller/datapath wiring, branching, ALU control, and loads/stores.",
       "Added memory-mapped I/O for DE10-Lite switches, LEDs, and seven-segment displays.",
@@ -426,7 +426,7 @@ function Hero({ activeLens, setActiveLens }) {
           <Orbit size={16} />
           UBC Computer Engineering - Vancouver
         </p>
-        <h1>Harpreet Singh</h1>
+        <h1>Harpreet</h1>
         <p className="hero-role">AI + Computer Engineer</p>
         <p className="intro">
           I build across AI, software, and systems: backend services, retrieval
@@ -483,10 +483,6 @@ function SignalBar() {
       <div>
         <strong>UBC ORBIT</strong>
         <span>Mission operations software</span>
-      </div>
-      <div>
-        <strong>RAG Pipeline</strong>
-        <span>11,890 chunks - FAISS index</span>
       </div>
       <div>
         <strong>UBC BASc</strong>
@@ -556,8 +552,8 @@ function Work({ activeLens }) {
   return (
     <section className="work-section" id="work">
       <div className="section-heading">
-        <p className="eyebrow">01 / Selected Work</p>
-        <h2>Projects with proof, not polish alone.</h2>
+        <p className="eyebrow">01 / Work</p>
+        <h2>Projects and systems.</h2>
       </div>
       <div className="case-grid">
         {visibleProjects.map((project, index) => (
@@ -625,7 +621,7 @@ function Labs() {
     <section className="labs-section">
       <div className="section-heading compact">
         <p className="eyebrow">03 / Lab Bench</p>
-        <h2>Smaller prototypes worth keeping on the table.</h2>
+        <h2>Useful experiments and prototypes.</h2>
       </div>
       <div className="lab-grid">
         {labs.map((lab) => (
@@ -659,9 +655,7 @@ function Notes() {
         </p>
         <h2>Writing will live here.</h2>
         <p>
-          This section is reserved for future posts: build logs, engineering notes,
-          AI experiments, and project retrospectives. I am leaving it empty until
-          there is real writing to publish.
+          Reserved for future build logs, AI notes, systems notes, and project retrospectives.
         </p>
       </div>
       <div className="blog-empty">
@@ -670,7 +664,7 @@ function Notes() {
           <Sparkles size={18} />
         </div>
         <h3>No posts yet.</h3>
-        <p>Coming soon: a small, honest blog for what I build and learn.</p>
+        <p>Coming soon when there is real writing to publish.</p>
         <div className="blog-topics" aria-label="Future blog categories">
           <span>Build logs</span>
           <span>AI notes</span>
