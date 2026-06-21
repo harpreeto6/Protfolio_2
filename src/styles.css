@@ -656,6 +656,13 @@ h2 {
   opacity: 0.34;
 }
 
+.diagram-edge-head {
+  fill: none;
+  stroke: transparent;
+  stroke-linecap: round;
+  stroke-width: 2.6;
+}
+
 .diagram-node-svg rect {
   fill: #fffdf8;
   stroke: #251d17;

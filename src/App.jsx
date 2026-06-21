@@ -230,7 +230,7 @@ const diagrams = {
       { x: 286, y: 98, w: 205, h: 78, label: "QuestController", sub: "POST /quest/generate" },
       { x: 540, y: 98, w: 185, h: 78, label: "QuestService", sub: "delegates" },
       { x: 118, y: 294, w: 225, h: 78, label: "McpClient", sub: "JSON-RPC tools/call" },
-      { x: 410, y: 294, w: 245, h: 78, label: ["generateQuest", "tool"], sub: "structured content" },
+      { x: 410, y: 294, w: 245, h: 92, label: ["generateQuest", "tool"], sub: "structured content" },
       { x: 262, y: 424, w: 245, h: 78, label: "QuestResponse", sub: "title / steps / difficulty" },
     ],
     edges: [
@@ -331,18 +331,33 @@ function ArchitectureDiagram({ type }) {
     const end = rectIntersection(to, fromCenterX, fromCenterY);
     const dx = end.x - start.x;
     const dy = end.y - start.y;
+    const length = Math.hypot(dx, dy) || 1;
+
+    // Keep arrowheads fully visible by pulling the path end slightly back from the node edge.
+    const markerInset = 3;
+    const inset = Math.min(markerInset, Math.max(0, length - 2));
+    let endX = end.x - (dx / length) * inset;
+    let endY = end.y - (dy / length) * inset;
+
+    const needsLeftNudge =
+      (type === "questboard" && fromIndex === 4 && toIndex === 5) ||
+      (type === "rag" && fromIndex === 4 && toIndex === 6);
+
+    if (needsLeftNudge) {
+      endX -= 3;
+    }
 
     if (Math.abs(dx) < 18 || Math.abs(dy) < 18) {
-      return `M ${start.x} ${start.y} L ${end.x} ${end.y}`;
+      return `M ${start.x} ${start.y} L ${endX} ${endY}`;
     }
 
     if (Math.abs(dx) >= Math.abs(dy)) {
-      const midX = (start.x + end.x) / 2;
-      return `M ${start.x} ${start.y} C ${midX} ${start.y}, ${midX} ${end.y}, ${end.x} ${end.y}`;
+      const midX = (start.x + endX) / 2;
+      return `M ${start.x} ${start.y} C ${midX} ${start.y}, ${midX} ${endY}, ${endX} ${endY}`;
     }
 
-    const midY = (start.y + end.y) / 2;
-    return `M ${start.x} ${start.y} C ${start.x} ${midY}, ${end.x} ${midY}, ${end.x} ${end.y}`;
+    const midY = (start.y + endY) / 2;
+    return `M ${start.x} ${start.y} C ${start.x} ${midY}, ${endX} ${midY}, ${endX} ${endY}`;
   };
   const renderTextLines = (lines, className, x, y, lineHeight) =>
     toLines(lines).map((line, lineIndex) => (
@@ -375,7 +390,7 @@ function ArchitectureDiagram({ type }) {
           {diagram.lanes[1]}
         </text>
         {diagram.edges.map((edge) => (
-          <path className="diagram-edge" d={edgePath(edge)} key={edge.join("-")} markerEnd={`url(#arrow-${type})`} />
+          <path className="diagram-edge" d={edgePath(edge)} key={`line-${edge.join("-")}`} />
         ))}
         {diagram.nodes.map((node, index) => (
           <g className="diagram-node-svg" key={node.label}>
@@ -390,6 +405,14 @@ function ArchitectureDiagram({ type }) {
               {renderTextLines(node.sub, "diagram-node-sub", node.x + 14, node.y + node.h - 14, 15)}
             </text>
           </g>
+        ))}
+        {diagram.edges.map((edge) => (
+          <path
+            className="diagram-edge-head"
+            d={edgePath(edge)}
+            key={`head-${edge.join("-")}`}
+            markerEnd={`url(#arrow-${type})`}
+          />
         ))}
       </svg>
     </div>
