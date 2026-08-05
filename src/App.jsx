@@ -26,6 +26,8 @@ const links = {
   email: "mailto:hs3732065@gmail.com",
 };
 
+const resumePath = (fileName) => `${import.meta.env.BASE_URL}resumes/${fileName}`;
+
 const lenses = {
   software: {
     label: "Software",
@@ -50,15 +52,15 @@ const lenses = {
 const resumes = [
   {
     label: "Software resume",
-    href: "/resumes/Harpreet-Singh-Software-Resume.pdf",
+    href: resumePath("Harpreet-Singh-Software-Resume.pdf"),
   },
   {
     label: "AI/ML resume",
-    href: "/resumes/Harpreet-Singh-AI-ML-Resume.pdf",
+    href: resumePath("Harpreet-Singh-AI-ML-Resume.pdf"),
   },
   {
     label: "Systems resume",
-    href: "/resumes/Harpreet-Singh-Systems-Resume.pdf",
+    href: resumePath("Harpreet-Singh-Systems-Resume.pdf"),
   },
 ];
 
@@ -518,7 +520,7 @@ function Hero({ activeLens, setActiveLens }) {
             See the work
             <ArrowUpRight size={18} />
           </a>
-          <a className="secondary-action" href="/resumes/Harpreet-Singh-Software-Resume.pdf">
+          <a className="secondary-action" href={resumes[0].href}>
             <Download size={18} />
             Resume
           </a>
